@@ -1,4 +1,4 @@
-CREATE DATABASE `armis-assessor`;
+CREATE DATABASE `db_armis_assessor`;
 CREATE TABLE `t_controls` (
 	/*creating the controls table*/
 	`control_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -13,10 +13,10 @@ CREATE TABLE `t_controls` (
 
 LOCK TABLES `t_controls` WRITE;
 
-INSERT INTO `t_controls` ()
+INSERT INTO `t_controls` (`control_id`, `control_description`, `information_source`, `control_benefit`, `control_cost`, `control_impact_score`)
 VALUES
-	()
-	();
+	(5,`Username and password`,`Assume`,4,2,1),
+	(6,`Two-factor authentication`,`IT Manager`,4,2,1);
 	
 UNLOCK TABLES;
 
@@ -30,10 +30,10 @@ CREATE TABLE `t_systems` (
 
 LOCK TABLES `t_systems` WRITE;
 
-INSERT INTO `t_systems` ()
+INSERT INTO `t_systems` (`system_id`, `system_description`)
 VALUES
-	()
-	();
+	(1, `Electronic Health Records application EHR`),
+	(2, `Email accounts`);
 	
 UNLOCK TABLES;
 
@@ -58,9 +58,9 @@ CREATE TABLE `jt_control_system` (
 
 LOCK TABLES `jt_control_system` WRITE;
 
-INSERT INTO `jt_control_system` ()
+INSERT INTO `jt_control_system` (`control_system_id`, `control_id`, `system_id`)
 VALUES
-	()
-	();
+	(1,1,1),
+	(2,1,2);
 
 UNLOCK TABLES;
